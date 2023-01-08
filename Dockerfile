@@ -10,5 +10,6 @@ RUN yarn && yarn build
 # production environment
 FROM nginx:stable-alpine
 COPY --from=build /app/build /usr/share/nginx/html
-EXPOSE 80
+COPY nginx.conf /etc/nginx/
+EXPOSE 9080
 CMD ["nginx", "-g", "daemon off;"]
