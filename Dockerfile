@@ -1,9 +1,9 @@
 # build environment
-FROM node:13.12.0-alpine as build
+FROM node:lts-alpine as build
 WORKDIR /app
 ENV PATH /app/node_modles/.bin:$PATH
 COPY package*.json ./
-# RUN yarn cache clean && yarn --update-checksums
+RUN yarn cache clean && yarn --update-checksums
 COPY . ./
 RUN yarn && yarn build
 
