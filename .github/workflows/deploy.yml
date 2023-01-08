@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Use Node.js 13.12
+      - name: Use Node.js 18.12
         uses: actions/setup-node@v1
         with:
-          node-version: '18'
+          node-version: '18.12'
       - name: Install yarn
         run: yarn
         env:
